@@ -10,6 +10,7 @@ class VilTAGE {
   static ParagraphElement pe;
   
   static start(VilTAGEConfig vc) {
+    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
     width = vc.width;
     height= vc.height;
     renderPS = vc.renderPS;
