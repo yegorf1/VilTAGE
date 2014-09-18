@@ -3,6 +3,7 @@ import 'dart:html';
 import 'entity/entity.dart';
 import 'viltage_config.dart';
 import 'etc/utility.dart';
+import 'entity/charNode.dart';
 
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
@@ -47,4 +48,8 @@ void main() {
   VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#can"));
   VilTAGE.start(vtc);
   Entity e = new Entity(0, 0, 0);
+  
+  for(int i = 0; i < 10; i++) {
+    e.charNodes.add(new CharNode(e.x+i, e.y, "."));
+  }
 }

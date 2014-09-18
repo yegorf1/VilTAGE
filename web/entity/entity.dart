@@ -1,19 +1,16 @@
 library entity;
 import '../viltage.dart';
-import 'node.dart';
+import 'charNode.dart';
 import '../etc/utility.dart';
 
 class Entity {
   int layer;
   int x, y;
   
-  List<Node> nodes = new List<Node>();
+  List<CharNode> charNodes = new List<CharNode>();
   
   Entity(this.x, this.y, this.layer) {
     VilTAGE.entities[layer].add(this);
-    for(int i = 0; i < 10; i++) {
-      nodes.add(new Node(x+i, y, "."));
-    }
   }
   
   remove() {
@@ -21,8 +18,8 @@ class Entity {
   }
   
   render() {
-    for(int i = 0; i < nodes.length; i++) {
-      Utility.ar[y+nodes[i].y][x+nodes[i].x] = nodes[i].getChar(); 
+    for(int i = 0; i < charNodes.length; i++) {
+      Utility.ar[y+charNodes[i].y][x+charNodes[i].x] = charNodes[i].getChar(); 
     }
   }
   
