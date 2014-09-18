@@ -49,7 +49,9 @@ void main() {
   VilTAGE.start(vtc);
   Entity e = new Entity(0, 0, 0);
   
-  for(int i = 0; i < 10; i++) {
-    e.charNodes.add(new CharNode(e.x+i, e.y, "."));
+  for(int i = 0; i < VilTAGE.width; i++) {
+    for(int j = 0; j < VilTAGE.height; j++) {
+      e.charNodes.add(new CharNode(e.x+i, e.y+j, "."));
+    }
   }
 }
