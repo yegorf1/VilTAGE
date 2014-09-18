@@ -10,12 +10,15 @@ class VilTAGE {
   static ParagraphElement pe;
   
   static start(VilTAGEConfig vc) {
-    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
     width = vc.width;
     height= vc.height;
     renderPS = vc.renderPS;
     updatePS = vc.updatePS;
     pe = vc.pe;
+
+    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
+    Utility.ar = new List<List<String>>(height);
+    for(int i = 0; i < Utility.ar.length; i++) Utility.ar[i] = new List<String>(width);
     
     loop(1);
   }
@@ -43,4 +46,5 @@ class VilTAGE {
 void main() {
   VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#can"));
   VilTAGE.start(vtc);
+  Entity e = new Entity(0, 0, 0);
 }
