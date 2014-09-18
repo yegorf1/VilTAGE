@@ -1,7 +1,8 @@
 VilTAGE
 =======
 
-```
+`
+
  ___________________________
 |                           |
 |              //           |
@@ -15,7 +16,7 @@ VilTAGE
 |                           |
 |          VilTAGE          |
 |___________________________|
-```
+`
 
 Stands for **ViliX'S Text/ASCII Game Engine**. It's more of a framework than a game engine.
 
