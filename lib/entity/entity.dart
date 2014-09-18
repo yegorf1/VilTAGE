@@ -1,6 +1,6 @@
 library entity;
 import '../viltage.dart';
-import 'charNode.dart';
+import 'char_node.dart';
 import '../etc/utility.dart';
 
 class Entity {

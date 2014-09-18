@@ -1,4 +1,9 @@
-name: VilTAGE
-description: A sample web application
-dependencies:
+name: viltage
+version: 0.0.1+4
+author: ViliX64 <vilem.zouhar@gmail.com>
+description: ViliX's Text/ASCII Game Engine
+homepage: https://github.com/ViliX64/VilTAGE
+environment:
+  sdk: '>=1.6.0'
+dev_dependencies:
   browser: any

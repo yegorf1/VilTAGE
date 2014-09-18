@@ -1,4 +1,4 @@
-library node;
+library char_node;
 
 class CharNode {
   int x, y;
