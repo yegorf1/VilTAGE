@@ -1,5 +1,1 @@
 library viltage;
-
-class Vil {
-  
-}

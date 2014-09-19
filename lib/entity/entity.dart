@@ -6,6 +6,7 @@ import '../etc/utility.dart';
 class Entity {
   int layer;
   int x, y;
+  int width, height;
   
   List<CharNode> charNodes = new List<CharNode>();
   
@@ -23,7 +24,16 @@ class Entity {
     }
   }
   
-  update() {
-    
+  update() { }
+  
+  setSize(int width, int height) {
+    this.width = width;
+    this.height = height;
+  }
+  
+  CharNode createCharNode(int x, int y, String text) {
+    CharNode cn = new CharNode(x, y, text[0]);
+    charNodes.add(cn);
+    return cn;
   }
 }

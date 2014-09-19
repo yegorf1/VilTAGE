@@ -22,6 +22,14 @@ class VilTAGE {
     Utility.ar = new List<List<String>>(height);
     for(int i = 0; i < Utility.ar.length; i++) Utility.ar[i] = new List<String>(width);
     
+    Entity e = new Entity(0, 0, 0);
+
+    for(int i = 0; i < VilTAGE.width; i++) {
+      for(int j = 0; j < VilTAGE.height; j++) {
+        e.charNodes.add(new CharNode(e.x+i, e.y+j, "."));
+      }
+    }
+
     loop(1);
   }
 
@@ -42,17 +50,5 @@ class VilTAGE {
 //    print("Loops: ${1~/((newDelta-delta)/1000)}");
     delta = newDelta;
     window.animationFrame.then(loop);
-  }
-}
-
-void main() {
-  VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#can"));
-  VilTAGE.start(vtc);
-  Entity e = new Entity(0, 0, 0);
-  
-  for(int i = 0; i < VilTAGE.width; i++) {
-    for(int j = 0; j < VilTAGE.height; j++) {
-      e.charNodes.add(new CharNode(e.x+i, e.y+j, "."));
-    }
   }
 }
