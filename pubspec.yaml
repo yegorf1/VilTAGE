@@ -1,9 +1,10 @@
 name: viltage
-version: 0.0.1+6
+version: 0.0.1+7
 author: ViliX64 <vilem.zouhar@gmail.com>
 description: ViliX's Text/ASCII Game Engine
 homepage: https://github.com/ViliX64/VilTAGE
 environment:
   sdk: '>=1.6.0'
-dev_dependencies:
-  browser: any
+dependencies:
+  browser: '>=0.10.0+2 <0.11.0'
+  crypto: '>=0.9.0 <1.0.0'
