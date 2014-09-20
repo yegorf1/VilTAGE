@@ -2,12 +2,15 @@ library state;
 
 import 'char_node.dart';
 import '../etc/utility.dart';
+import '../viltage.dart';
 
 class State {
   List<CharNode> charNodes = new List<CharNode>();
   
   render(int x, int y) {
     for(int i = 0; i < charNodes.length; i++) {
+      if(y+charNodes[i].y < VilTAGE.height && y+charNodes[i].y >= 0 &&
+         x+charNodes[i].x < VilTAGE.width  && x+charNodes[i].x >= 0)
       Utility.ar[y+charNodes[i].y][x+charNodes[i].x] = charNodes[i].getChar(); 
     }
   }
