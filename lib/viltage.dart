@@ -20,16 +20,16 @@ class VilTAGE {
 
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
     Utility.ar = new List<List<String>>(height);
-    for(int i = 0; i < Utility.ar.length; i++) Utility.ar[i] = new List<String>(width);
+    for(int i = 0; i < height; i++) Utility.ar[i] = new List<String>(width);
     
     Entity e = new Entity(0, 0, 0);
 
-    for(int i = 0; i < VilTAGE.width; i++) {
-      for(int j = 0; j < VilTAGE.height; j++) {
-        e.states[0].charNodes.add(new CharNode(e.x+i, e.y+j, "."));
+    for(int i = 0; i < Utility.ar.length; i++) {
+      for(int j = 0; j < Utility.ar[i].length; j++) {
+        e.states[0].charNodes.add(new CharNode(j, i, "."));
       }
     }
-
+    
     loop(1);
   }
 

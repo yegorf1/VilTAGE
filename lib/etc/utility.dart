@@ -10,8 +10,8 @@ class Utility {
     }
 
     StringBuffer sb = new StringBuffer();
-    for(int i = 0; i < VilTAGE.width; i++) {
-      for(int j = 0; j < VilTAGE.height; j++) {
+    for(int i = 0; i < VilTAGE.height; i++) {
+      for(int j = 0; j < VilTAGE.width; j++) {
         sb.write(ar[i][j]);
       }
       sb.write("<br />");

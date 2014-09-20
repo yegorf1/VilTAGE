@@ -11,10 +11,11 @@ class CharNode {
   
   String getChar() {
 //   return '<span style="color: $color;">$char</span>';
-    StringBuffer sbClasses = new StringBuffer();
+/*    StringBuffer sbClasses = new StringBuffer();
     for(int i = 0; i < classes.length; i++) {
       sbClasses.write("$classes[i] ");
     }
-    return '<span class="${sbClasses.toString()}>$char</span>';
+    return '<span class="${sbClasses.toString()}>$char</span>';*/
+    return char;
   }
 }
