@@ -16,7 +16,7 @@ class Utility {
       }
       sb.write("<br />");
     }
-    VilTAGE.pe.setInnerHtml(sb.toString());
+    VilTAGE.pe.setInnerHtml(sb.toString(), validator:VilTAGE.nvb);
   }
   
   static List<List<String>> ar;

@@ -10,6 +10,7 @@ class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
   static num width, height, renderPS, updatePS;
   static ParagraphElement pe;
+  static NodeValidatorBuilder nvb;
   
   static start(VilTAGEConfig vc) {
     width = vc.width;
@@ -17,6 +18,9 @@ class VilTAGE {
     renderPS = vc.renderPS;
     updatePS = vc.updatePS;
     pe = vc.pe;
+    
+    nvb = new NodeValidatorBuilder.common()
+      ..allowElement('span', attributes: ['style']);
 
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
     Utility.ar = new List<List<String>>(height);

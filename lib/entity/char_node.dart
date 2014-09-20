@@ -3,7 +3,7 @@ library char_node;
 class CharNode {
   int x, y;
   String char = "x";
-  String color = "#f00";
+  String color = "#8989B3";
   List<String> classes = new List<String>();
   
   
@@ -17,6 +17,6 @@ class CharNode {
     for(int i = 0; i < classes.length; i++) {
       sbClasses.write('${classes[i]} ');
     }
-    return '<span class="${sbClasses.toString()}">$char</span>';
+    return '<span class="${sbClasses.toString()}" style="color: $color">$char</span>';
   }
 }
