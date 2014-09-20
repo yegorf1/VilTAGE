@@ -1,22 +1,7 @@
 VilTAGE
 =======
 
-```
- ____________________________
-|                            |
-|                //          |
-|              / /           |
-|            /  /            |
-|          /   /___          |
-|        /____     /         |
-|            /   /           |
-|           /  /             |
-|          / /               |
-|         //                 |
-|                            |
-|          VilTAGE           |
-|____________________________|
-```
+![VilTAGE logo](http://s28.postimg.org/lcfi75lf1/Vil_TAGE_logo.png)
 
 Stands for **ViliX's Text/ASCII Game Engine**. It's more of a framework than a game engine.
 
