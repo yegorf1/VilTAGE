@@ -28,10 +28,6 @@ In the future, VilTAGE should be able to provide an easy way of making Dart ASCI
 * [Create your first project](https://github.com/ViliX64/VilTAGE/wiki/Creating-first-project)
 * [Read the Wiki](https://github.com/ViliX64/VilTAGE/wiki)
 
-### Documentation
-
-VilTAGE is too small by this time, so no Wiki is necessary. This can change in the future.
-
 ### Contact
 
 You can contact me on Twitter @ViliX64 where I'll happily explain everything about VilTAGE to you.
