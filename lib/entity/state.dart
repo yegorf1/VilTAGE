@@ -29,4 +29,17 @@ class State {
     }
     return charNodes;
   }
+  
+  List<List<CharNode>> createCharNodeRect(int x, int y, List<String> text) {
+    List<List<CharNode>> charNodes = new List<List<CharNode>>();
+    for(int i = 0; i < text.length; i++) {
+      charNodes.add(new List<CharNode>());
+      for(int j = 0; j < text[i].length; j++) {
+        CharNode cn = new CharNode(x + j, y + i, text[i][j]);
+        charNodes[i].add(cn);
+        this.charNodes.add(cn);
+      }
+    }
+    return charNodes;
+  }
 }
