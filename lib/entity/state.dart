@@ -17,4 +17,16 @@ class State {
     charNodes.add(cn);
     return cn;
   }
+  
+  List<CharNode> createCharNodeLine(int x, int y, bool horizontal, String text) {
+    List<CharNode> charNodes = new List<CharNode>();
+    for(int i = 0; i < text.length; i++) {
+      CharNode cn;
+      if(horizontal) cn = new CharNode(x + i, y, text[i]);
+      else cn = new CharNode(x, y + i, text[i]);
+      charNodes.add(cn);
+      this.charNodes.add(cn);
+    }
+    return charNodes;
+  }
 }
