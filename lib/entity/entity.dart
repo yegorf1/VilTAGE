@@ -1,39 +1,25 @@
 library entity;
 import '../viltage.dart';
-import 'char_node.dart';
-import '../etc/utility.dart';
+import 'state.dart';
+
 
 class Entity {
   int layer;
   int x, y;
   int width, height;
+  int activeState = 0;
   
-  List<CharNode> charNodes = new List<CharNode>();
+  List<State> states = new List<State>();
   
   Entity(this.x, this.y, this.layer) {
     VilTAGE.entities[layer].add(this);
-  }
-  
-  remove() {
-    VilTAGE.entities[layer].remove(this);
+    states.add(new State());
   }
   
   render() {
-    for(int i = 0; i < charNodes.length; i++) {
-      Utility.ar[y+charNodes[i].y][x+charNodes[i].x] = charNodes[i].getChar(); 
-    }
+    states[activeState].render(x, y);
   }
   
   update() { }
-  
-  setSize(int width, int height) {
-    this.width = width;
-    this.height = height;
-  }
-  
-  CharNode createCharNode(int x, int y, String text) {
-    CharNode cn = new CharNode(x, y, text[0]);
-    charNodes.add(cn);
-    return cn;
-  }
+  remove() { VilTAGE.entities[layer].remove(this); }
 }

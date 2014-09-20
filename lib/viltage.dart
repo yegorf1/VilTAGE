@@ -26,7 +26,7 @@ class VilTAGE {
 
     for(int i = 0; i < VilTAGE.width; i++) {
       for(int j = 0; j < VilTAGE.height; j++) {
-        e.charNodes.add(new CharNode(e.x+i, e.y+j, "."));
+        e.states[0].charNodes.add(new CharNode(e.x+i, e.y+j, "."));
       }
     }
 
