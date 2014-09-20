@@ -19,6 +19,10 @@ class VilTAGE {
     updatePS = vc.updatePS;
     pe = vc.pe;
     
+    pe.attributes["font-family"] = "'Courier', sans-serif";
+    pe.attributes["font-size"] = "14px";
+    pe.attributes["style"] = "font-family:courier";
+    
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
 
