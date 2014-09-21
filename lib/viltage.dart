@@ -37,13 +37,7 @@ class VilTAGE {
       Utility.ar2[i] = new List<String>(width);
     }
     
-    Entity e = new Entity(0, 0, 0);
-
-    for(int i = 0; i < Utility.ar.length; i++) {
-      for(int j = 0; j < Utility.ar[i].length; j++) {
-        e.states[0].charNodes.add(new CharNode(j, i, "."));
-      }
-    }
+    Utility.createBaseEntity();
     Utility.render();
    
     Input.init();
@@ -55,6 +49,7 @@ class VilTAGE {
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>(); 
     _stage = s;
     _stage.init();
+    Utility.createBaseEntity();
   }
 
   static num delta = 0;

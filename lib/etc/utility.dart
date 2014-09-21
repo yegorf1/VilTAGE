@@ -1,5 +1,6 @@
 library utility;
 import '../viltage.dart';
+import '../../packages/viltage/entity/entity.dart';
 
 class Utility {
   static render() {
@@ -14,7 +15,8 @@ class Utility {
     StringBuffer sb = new StringBuffer();
     for(int i = 0; i < VilTAGE.height; i++) {
       for(int j = 0; j < VilTAGE.width; j++) {
-        sb.write(ar[i][j]);
+        if(ar[i][j] == null) sb.write(".");
+        else sb.write(ar[i][j]);
       }
       sb.write("<br />");
     }
@@ -44,6 +46,16 @@ class Utility {
     for(int i = 0; i < ar.length; i++) {
       for(int j = 0; j < ar[i].length; j++) {
         ar2[i][j] = ar[i][j];
+      }
+    }
+  }
+  
+  static void createBaseEntity() {
+    Entity e = new Entity(0, 0, 0);
+
+    for(int i = 0; i < Utility.ar.length; i++) {
+      for(int j = 0; j < Utility.ar[i].length; j++) {
+        e.states[0].createCharNode(j, i, ".");
       }
     }
   }
