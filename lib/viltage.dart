@@ -6,6 +6,7 @@ import 'viltage_config.dart';
 import 'etc/utility.dart';
 import 'entity/char_node.dart';
 import 'input.dart';
+import 'stage.dart';
 
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
@@ -13,6 +14,7 @@ class VilTAGE {
   static String backgroundColor;
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
+  static Stage _stage;
   
   static start(VilTAGEConfig vc) {
     width = vc.width;
@@ -48,6 +50,11 @@ class VilTAGE {
     
     loop(1);
   }
+  
+  static setStage(Stage s) {
+    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>(); 
+    _stage = s;
+  }
 
   static num delta = 0;
   static num time1 = 0, time2 = 0;
@@ -56,6 +63,7 @@ class VilTAGE {
     time2 += (newDelta-delta)/1000;
     while(time1 >= 1/renderPS) {
      Utility.render();
+     _stage.render();
      if(!Utility.identical()) {
        Utility.draw();
        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
@@ -66,6 +74,7 @@ class VilTAGE {
     }
     while(time2 >= 1/updatePS) {
      Utility.update();
+     _stage.update();
      time2 -= 1/updatePS;
     }
     
