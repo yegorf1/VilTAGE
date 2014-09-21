@@ -22,8 +22,6 @@ class VilTAGE {
     pe = vc.pe;
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
-    pe.attributes["font-size"] = "14px";
-    pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
     
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
@@ -50,6 +48,8 @@ class VilTAGE {
     time2 += (newDelta-delta)/1000;
     while(time1 >= 1/renderPS) {
      Utility.render();
+     pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
+     pe.attributes["font-size"] = "14px";
      time1 -= 1/renderPS;
     }
     while(time2 >= 1/updatePS) {
