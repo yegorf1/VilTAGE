@@ -19,12 +19,29 @@ class Utility {
     VilTAGE.pe.setInnerHtml(sb.toString(), validator:VilTAGE.nvb);
   }
   
-  static List<List<String>> ar;
+  static List<List<String>> ar, ar2;
   
   static update() {
     for(int i = 0; i < VilTAGE.entities.length; i++) {
       for(int j = 0; j < VilTAGE.entities[i].length; j++) {
         VilTAGE.entities[i][j].update();
+      }
+    }
+  }
+  
+  static bool identical() {
+    for(int i = 0; i < ar.length; i++) {
+      for(int j = 0; j < ar[i].length; j++) {
+        if(ar[i][j] != ar2[i][j]) return false;
+      }
+    }
+    return true;
+  }
+  
+  static void merge() {
+    for(int i = 0; i < ar.length; i++) {
+      for(int j = 0; j < ar[i].length; j++) {
+        ar2[i][j] = ar[i][j];
       }
     }
   }

@@ -28,7 +28,11 @@ class VilTAGE {
 
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
     Utility.ar = new List<List<String>>(height);
-    for(int i = 0; i < height; i++) Utility.ar[i] = new List<String>(width);
+    Utility.ar2 = new List<List<String>>(height);
+    for(int i = 0; i < height; i++) {
+      Utility.ar[i] = new List<String>(width);
+      Utility.ar2[i] = new List<String>(width);
+    }
     
     Entity e = new Entity(0, 0, 0);
 
@@ -37,7 +41,8 @@ class VilTAGE {
         e.states[0].charNodes.add(new CharNode(j, i, "."));
       }
     }
-    
+    Utility.render();
+   
     loop(1);
   }
 
@@ -47,9 +52,12 @@ class VilTAGE {
     time1 += (newDelta-delta)/1000;
     time2 += (newDelta-delta)/1000;
     while(time1 >= 1/renderPS) {
-     Utility.render();
-     pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
-     pe.attributes["font-size"] = "14px";
+     if(!Utility.identical()) {
+       Utility.render();
+       pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
+       pe.attributes["font-size"] = "14px";
+       Utility.merge();
+     }
      time1 -= 1/renderPS;
     }
     while(time2 >= 1/updatePS) {
