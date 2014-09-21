@@ -14,6 +14,20 @@ In the future, VilTAGE should be able to provide an easy way of making Dart ASCI
 * [Display some stuff](https://github.com/ViliX64/VilTAGE/wiki/Adding-entities)
 * [Read the Wiki](https://github.com/ViliX64/VilTAGE/wiki)
 
+### Creating new game
+
+To demonstrate how simple it is to create a new VilTAGE game (read more on wiki), here are two steps you need to make to create new game:
+
+1. add `dependency viltage: any` to your project's pubspec.yaml
+2. add those two lines to your `main()` function:
+```
+VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#game_paragraph"));
+VilTAGE.start(vtc);
+```
+This will create just a blank 'canvas', but it's a foundation for a new game.
+
+![](http://s24.postimg.org/tu31g8g35/git_Screen.png)
+
 ### Contact
 
 You can contact me on Twitter @ViliX64 where I'll happily explain everything about VilTAGE to you.
