@@ -14,7 +14,6 @@ class CharNode {
     classes.add("char_node");
     _sbClasses = new StringBuffer();
     _sbStyles = new StringBuffer();
-    print(_sbClasses.toString());
   }
   
   String getChar() {
