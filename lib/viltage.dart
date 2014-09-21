@@ -54,6 +54,7 @@ class VilTAGE {
   static setStage(Stage s) {
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>(); 
     _stage = s;
+    _stage.init();
   }
 
   static num delta = 0;
