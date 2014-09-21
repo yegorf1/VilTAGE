@@ -8,7 +8,9 @@ class Utility {
         VilTAGE.entities[i][j].render();
       }
     }
-
+ }
+  
+  static draw() {
     StringBuffer sb = new StringBuffer();
     for(int i = 0; i < VilTAGE.height; i++) {
       for(int j = 0; j < VilTAGE.width; j++) {

@@ -5,6 +5,7 @@ import 'entity/entity.dart';
 import 'viltage_config.dart';
 import 'etc/utility.dart';
 import 'entity/char_node.dart';
+import 'input.dart';
 
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
@@ -43,6 +44,8 @@ class VilTAGE {
     }
     Utility.render();
    
+    Input.init();
+    
     loop(1);
   }
 
@@ -52,8 +55,9 @@ class VilTAGE {
     time1 += (newDelta-delta)/1000;
     time2 += (newDelta-delta)/1000;
     while(time1 >= 1/renderPS) {
+     Utility.render();
      if(!Utility.identical()) {
-       Utility.render();
+       Utility.draw();
        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
        pe.attributes["font-size"] = "14px";
        Utility.merge();
