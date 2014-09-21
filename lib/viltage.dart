@@ -58,7 +58,7 @@ class VilTAGE {
      Utility.render();
      if(!Utility.identical()) {
        Utility.draw();
-       pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
+       pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
        pe.attributes["font-size"] = "14px";
        Utility.merge();
      }
