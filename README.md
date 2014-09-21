@@ -30,7 +30,7 @@ This will create just a blank 'canvas', but it's a foundation for a new game.
 
 ### Contact
 
-You can contact me on Twitter @ViliX64 where I'll happily explain everything about VilTAGE to you.
+You can contact me on Twitter ![@ViliX64](https://twitter.com/ViliX64) where I'll happily explain everything about VilTAGE to you.
 
 ### Contributing & Source
 
