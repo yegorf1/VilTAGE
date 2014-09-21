@@ -18,7 +18,7 @@ class CharNode {
   }
   
   String getChar() {
-    if(classes.length > 1) {
+    if(classes.length > 0) {
       _sbClasses = new StringBuffer();
       _sbClasses.write('class="');
       for(int i = 0; i < classes.length; i++) {
@@ -26,7 +26,7 @@ class CharNode {
       }
       _sbClasses.write('"');
     }
-    if(styles.length > 1) {
+    if(styles.length > 0) {
       _sbStyles = new StringBuffer();
       styles.forEach((k, v) {
         _sbStyles.write("$k: $v;");
