@@ -23,7 +23,7 @@ class VilTAGE {
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
     pe.attributes["font-size"] = "14px";
-    pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor};";
+    pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center;";
     
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
