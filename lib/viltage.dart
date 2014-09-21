@@ -63,7 +63,7 @@ class VilTAGE {
     time2 += (newDelta-delta)/1000;
     while(time1 >= 1/renderPS) {
      Utility.render();
-     _stage.render();
+     if(_stage != null) _stage.render();
      if(!Utility.identical()) {
        Utility.draw();
        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
@@ -74,7 +74,7 @@ class VilTAGE {
     }
     while(time2 >= 1/updatePS) {
      Utility.update();
-     _stage.update();
+     if(_stage != null) _stage.update();
      time2 -= 1/updatePS;
     }
     
