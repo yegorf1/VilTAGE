@@ -9,6 +9,7 @@ import 'entity/char_node.dart';
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
   static num width, height, renderPS, updatePS;
+  static String backgroundColor;
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
   
@@ -17,11 +18,12 @@ class VilTAGE {
     height= vc.height;
     renderPS = vc.renderPS;
     updatePS = vc.updatePS;
+    backgroundColor = vc.backgroundColor;
     pe = vc.pe;
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
     pe.attributes["font-size"] = "14px";
-    pe.attributes["style"] = "font-family:courier";
+    pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor};";
     
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);

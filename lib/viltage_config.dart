@@ -6,6 +6,7 @@ class VilTAGEConfig {
   int height = 20;
   int renderPS = 30;
   int updatePS = 15;
+  String backgroundColor = "#FFFFFF";
   ParagraphElement pe;
   
   VilTAGEConfig(this.pe) { }
