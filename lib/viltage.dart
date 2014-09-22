@@ -4,13 +4,12 @@ import 'dart:html';
 import 'entity/entity.dart';
 import 'viltage_config.dart';
 import 'etc/utility.dart';
-import 'entity/char_node.dart';
 import 'input.dart';
 import 'stage.dart';
 
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
-  static num width, height, renderPS, updatePS;
+  static num width, height, updatePS;
   static String backgroundColor;
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
@@ -19,7 +18,6 @@ class VilTAGE {
   static start(VilTAGEConfig vc) {
     width = vc.width;
     height= vc.height;
-    renderPS = vc.renderPS;
     updatePS = vc.updatePS;
     backgroundColor = vc.backgroundColor;
     pe = vc.pe;
@@ -53,25 +51,22 @@ class VilTAGE {
   }
 
   static num delta = 0;
-  static num time1 = 0, time2 = 0;
+  static num time1 = 0;
   static loop(num newDelta) {
     time1 += (newDelta-delta)/1000;
-    time2 += (newDelta-delta)/1000;
-    while(time1 >= 1/renderPS) {
-     Utility.render();
-     if(_stage != null) _stage.render();
-     if(!Utility.identical()) {
-       Utility.draw();
-       pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
-       pe.attributes["font-size"] = "14px";
-       Utility.merge();
-     }
-     time1 -= 1/renderPS;
-    }
-    while(time2 >= 1/updatePS) {
-     Utility.update();
-     if(_stage != null) _stage.update();
-     time2 -= 1/updatePS;
+    while(time1 >= 1/updatePS) {
+      Utility.update((newDelta-delta)/1000);
+      if(_stage != null) _stage.update((newDelta-delta)/1000);
+      
+      Utility.render();
+      if(_stage != null) _stage.render();
+      if(!Utility.identical()) {
+        Utility.draw();
+        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
+        pe.attributes["font-size"] = "14px";
+        Utility.merge();
+      }
+      time1 -= 1/updatePS;
     }
     
 //    print("Loops: ${1~/((newDelta-delta)/1000)}");

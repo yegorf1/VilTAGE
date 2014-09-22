@@ -20,6 +20,6 @@ class Entity {
     states[activeState].render(x, y);
   }
   
-  update() { }
+  update(double delta) { }
   remove() { VilTAGE.entities[layer].remove(this); }
 }

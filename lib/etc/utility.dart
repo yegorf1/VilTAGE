@@ -25,10 +25,10 @@ class Utility {
   
   static List<List<String>> ar, ar2;
   
-  static update() {
+  static update(double delta) {
     for(int i = 0; i < VilTAGE.entities.length; i++) {
       for(int j = 0; j < VilTAGE.entities[i].length; j++) {
-        VilTAGE.entities[i][j].update();
+        VilTAGE.entities[i][j].update(delta);
       }
     }
   }
