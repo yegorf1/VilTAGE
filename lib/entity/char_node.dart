@@ -16,7 +16,7 @@ class CharNode {
     _sbStyles = new StringBuffer();
   }
   
-  String getChar() {
+  String getHTML() {
     if(classes.length > 0) {
       _sbClasses = new StringBuffer();
       _sbClasses.write('class="');
