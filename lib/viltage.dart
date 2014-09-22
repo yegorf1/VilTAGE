@@ -28,11 +28,11 @@ class VilTAGE {
       ..allowElement('span', attributes: ['style']);
 
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
-    Utility.ar = new List<List<String>>(height);
-    Utility.ar2 = new List<List<String>>(height);
+    Utility.charArray = new List<List<String>>(height);
+    Utility.charArray2 = new List<List<String>>(height);
     for(int i = 0; i < height; i++) {
-      Utility.ar[i] = new List<String>(width);
-      Utility.ar2[i] = new List<String>(width);
+      Utility.charArray[i] = new List<String>(width);
+      Utility.charArray2[i] = new List<String>(width);
     }
     
     Utility.createBaseEntity();
