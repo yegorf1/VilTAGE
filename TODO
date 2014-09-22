@@ -1,5 +1,4 @@
 Things that should be definietly included:
 
-custom style list for CharNodes
 animation system using States
-rotation
+add delta to update method
