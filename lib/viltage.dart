@@ -67,8 +67,7 @@ class VilTAGE {
       if(_stage != null) _stage.render();
       if(!Utility.identical()) {
         Utility.draw();
-        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
-        pe.attributes["font-size"] = "${fontSize}px";
+        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt;";
         Utility.merge();
       }
       time1 -= 1/updatePS;
