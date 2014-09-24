@@ -6,7 +6,7 @@ class VilTAGEConfig {
   int height = 20;
   int updatePS = 15;
   int fontSize = 14;
-  double lineHeight = 1.toDouble();
+  double lineHeight = 1.0;
   String backgroundColor = "#FFFFFF";
   ParagraphElement pe;
   String backgroundChar = ".";
