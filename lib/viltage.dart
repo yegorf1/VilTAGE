@@ -12,7 +12,7 @@ class VilTAGE {
   static num width, height, updatePS;
   static String backgroundColor;
   static String backgroundChar;
-  static int fontSize;
+  static int fontSize, lineHeight;
   
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
@@ -26,6 +26,7 @@ class VilTAGE {
     pe = vc.pe;
     backgroundChar = vc.backgroundChar;
     fontSize = vc.fontSize;
+    lineHeight = vc.lineHeight;
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
     
@@ -67,7 +68,7 @@ class VilTAGE {
       if(_stage != null) _stage.render();
       if(!Utility.identical()) {
         Utility.draw();
-        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt;";
+        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
         Utility.merge();
       }
       time1 -= 1/updatePS;
