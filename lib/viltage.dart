@@ -14,6 +14,7 @@ class VilTAGE {
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
   static Stage _stage;
+  static String backgroundChar;
   
   static start(VilTAGEConfig vc) {
     width = vc.width;
@@ -21,6 +22,7 @@ class VilTAGE {
     updatePS = vc.updatePS;
     backgroundColor = vc.backgroundColor;
     pe = vc.pe;
+    backgroundChar = vc.backgroundChar;
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
     

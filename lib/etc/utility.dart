@@ -55,7 +55,7 @@ class Utility {
 
     for(int i = 0; i < Utility.charArray.length; i++) {
       for(int j = 0; j < Utility.charArray[i].length; j++) {
-        e.states[0].createCharNode(j, i, ".");
+        e.states[0].createCharNode(j, i, VilTAGE.backgroundChar);
       }
     }
   }
