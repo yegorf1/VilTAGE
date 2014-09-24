@@ -11,10 +11,12 @@ class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);
   static num width, height, updatePS;
   static String backgroundColor;
+  static String backgroundChar;
+  static int fontSize;
+  
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
   static Stage _stage;
-  static String backgroundChar;
   
   static start(VilTAGEConfig vc) {
     width = vc.width;
@@ -23,6 +25,7 @@ class VilTAGE {
     backgroundColor = vc.backgroundColor;
     pe = vc.pe;
     backgroundChar = vc.backgroundChar;
+    fontSize = vc.fontSize;
     
     pe.attributes["font-family"] = "'Courier', sans-serif";
     
@@ -65,7 +68,7 @@ class VilTAGE {
       if(!Utility.identical()) {
         Utility.draw();
         pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666;";
-        pe.attributes["font-size"] = "14px";
+        pe.attributes["font-size"] = "${fontSize}px";
         Utility.merge();
       }
       time1 -= 1/updatePS;
