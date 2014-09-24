@@ -12,7 +12,8 @@ class VilTAGE {
   static num width, height, updatePS;
   static String backgroundColor;
   static String backgroundChar;
-  static int fontSize, lineHeight;
+  static int fontSize;
+  static double lineHeight;
   
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
