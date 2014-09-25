@@ -26,9 +26,12 @@ class State {
   List<CharNode> createCharNodeLine(int x, int y, bool horizontal, String text) {
     List<CharNode> charNodes = new List<CharNode>();
     for(int i = 0; i < text.length; i++) {
+      String charText = text[i];
+      if(text[i] == " ") charText = "&nbsp;";
+      
       CharNode cn;
-      if(horizontal) cn = new CharNode(x + i, y, text[i]);
-      else cn = new CharNode(x, y + i, text[i]);
+      if(horizontal) cn = new CharNode(x + i, y, charText);
+      else cn = new CharNode(x, y + i, charText);
       charNodes.add(cn);
       this.charNodes.add(cn);
     }
@@ -40,7 +43,10 @@ class State {
     for(int i = 0; i < text.length; i++) {
       charNodes.add(new List<CharNode>());
       for(int j = 0; j < text[i].length; j++) {
-        CharNode cn = new CharNode(x + j, y + i, text[i][j]);
+        String charText = text[i][j];
+        if(text[i][j] == " ") charText = "&nbsp;";
+        
+        CharNode cn = new CharNode(x + j, y + i, charText);
         charNodes[i].add(cn);
         this.charNodes.add(cn);
       }
