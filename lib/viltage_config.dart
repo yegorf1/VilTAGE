@@ -8,8 +8,8 @@ class VilTAGEConfig {
   int fontSize = 14;
   double lineHeight = 1.0;
   String backgroundColor = "#FFFFFF";
-  ParagraphElement pe;
   String backgroundChar = ".";
+  ParagraphElement pe;
   
   VilTAGEConfig(this.pe) { }
 }
