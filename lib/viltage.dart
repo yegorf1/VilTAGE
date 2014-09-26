@@ -62,8 +62,8 @@ class VilTAGE {
   static loop(num newDelta) {
     time1 += (newDelta-delta)/1000;
     while(time1 >= 1/updatePS) {
-      Utility.update((newDelta-delta)/1000);
-      if(_stage != null) _stage.update((newDelta-delta)/1000);
+      Utility.update(time1);
+      if(_stage != null) _stage.update(time1);
       
       Utility.render();
       if(_stage != null) _stage.render();
@@ -75,7 +75,6 @@ class VilTAGE {
       time1 -= 1/updatePS;
     }
     
-//    print("Loops: ${1~/((newDelta-delta)/1000)}");
     delta = newDelta;
     window.animationFrame.then(loop);
   }
