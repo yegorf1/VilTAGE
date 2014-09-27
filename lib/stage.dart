@@ -1,4 +1,4 @@
-library stage;
+part of viltage;
 
 class Stage {
   void init() { }

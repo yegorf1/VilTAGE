@@ -1,7 +1,4 @@
-library gamejolt;
-
-import 'dart:html';
-import 'package:crypto/crypto.dart';
+part of viltage_etc;
 
 class GameJolt {
   static String base = "http://gamejolt.com/api/game/v1/scores/add/?";

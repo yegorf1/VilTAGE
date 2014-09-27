@@ -1,7 +1,4 @@
-library entity;
-import '../viltage.dart';
-import 'state.dart';
-
+part of viltage;
 
 class Entity {
   int layer;

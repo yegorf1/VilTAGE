@@ -1,6 +1,6 @@
-library utility;
+library viltage_etc;
+
 import '../viltage.dart';
-import '../entity/entity.dart';
 
 class Utility {
   static render() {

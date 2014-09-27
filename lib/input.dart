@@ -1,6 +1,4 @@
-library input;
-import 'dart:collection';
-import 'dart:html';
+part of viltage;
 
 class Input {
   static HashMap<int, int> _keys = new HashMap<int, int>();

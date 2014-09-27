@@ -1,5 +1,4 @@
-library viltage_config;
-import 'dart:html';
+part of viltage;
 
 class VilTAGEConfig {
   int width = 20;

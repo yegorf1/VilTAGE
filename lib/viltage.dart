@@ -1,11 +1,15 @@
 library viltage;
 
 import 'dart:html';
-import 'entity/entity.dart';
-import 'viltage_config.dart';
+import 'dart:collection';
 import 'etc/utility.dart';
-import 'input.dart';
-import 'stage.dart';
+
+part 'entity/state.dart';
+part 'entity/char_node.dart';
+part 'entity/entity.dart';
+part 'input.dart';
+part 'stage.dart';
+part 'viltage_config.dart';
 
 class VilTAGE {
   static List<List<Entity>> entities = new List<List<Entity>>(20);

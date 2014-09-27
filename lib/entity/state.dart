@@ -1,8 +1,4 @@
-library state;
-
-import 'char_node.dart';
-import '../etc/utility.dart';
-import '../viltage.dart';
+part of viltage;
 
 class State {
   List<CharNode> charNodes = new List<CharNode>();

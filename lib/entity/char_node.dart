@@ -1,4 +1,4 @@
-library char_node;
+part of viltage;
 
 class CharNode {
   int x, y;
