@@ -24,6 +24,9 @@ class VilTAGE {
   static Stage _stage;
   
   static start(VilTAGEConfig vc) {
+    window.onBlur.listen(blured);
+    window.onFocus.listen(focused);
+    
     width = vc.width;
     height= vc.height;
     updatePS = vc.updatePS;
@@ -64,23 +67,31 @@ class VilTAGE {
 
   static num delta = 0;
   static num time1 = 0;
+  static num pauseState = 1;
   static loop(num newDelta) {
-    time1 += (newDelta-delta)/1000;
-    while(time1 >= 1/updatePS) {
-      Utility.update(time1);
-      if(_stage != null) _stage.update(time1);
+    if(pauseState != 0) {
+      if(pauseState == 2) { time1 = 0.01; pauseState = 1;}
+      else time1 += (newDelta-delta)/1000;
       
-      Utility.render();
-      if(_stage != null) _stage.render();
-      if(!Utility.identical()) {
-        Utility.draw();
-        pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
-        Utility.merge();
+      while(time1 >= 1/updatePS) {
+        Utility.update(time1);
+        if(_stage != null) _stage.update(time1);
+        
+        Utility.render();
+        if(_stage != null) _stage.render();
+        if(!Utility.identical()) {
+          Utility.draw();
+          pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
+          Utility.merge();
+        }
+        time1 -= 1/updatePS;
       }
-      time1 -= 1/updatePS;
+      
+      delta = newDelta;
     }
-    
-    delta = newDelta;
     window.animationFrame.then(loop);
   }
+  
+  static blured(Event e) { pauseState = 0; }
+  static focused(Event e) { pauseState = 2; }
 }
