@@ -4,3 +4,4 @@ animation system using States
 sound
 keyPressed
 collision
+replace pauseStage with time = 0;
