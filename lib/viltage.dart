@@ -51,7 +51,6 @@ class VilTAGE {
       Utility.charArray2[i] = new List<String>(width);
     }
     
-    Utility.createBaseEntity();
     Utility.render();
    
     Input.init();
@@ -60,10 +59,9 @@ class VilTAGE {
   }
   
   static setStage(Stage s) {
-    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>(); 
+    Entity.clear();
     _stage = s;
     _stage.init();
-    Utility.createBaseEntity();
   }
 
   static num delta = 0;
