@@ -26,6 +26,7 @@ class VilTAGE {
   static start(VilTAGEConfig vc) {
     window.onBlur.listen(blured);
     window.onFocus.listen(focused);
+    window.onLoad.listen(focused);
     
     width = vc.width;
     height= vc.height;
@@ -42,7 +43,7 @@ class VilTAGE {
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
 
-    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
+    Entity.clear();
     Utility.charArray = new List<List<String>>(height);
     Utility.charArray2 = new List<List<String>>(height);
     for(int i = 0; i < height; i++) {
@@ -67,7 +68,7 @@ class VilTAGE {
 
   static num delta = 0;
   static num time1 = 0;
-  static num pauseState = 0;
+  static num pauseState = 1;
   static loop(num newDelta) {
     if(pauseState != 1) {
       if(pauseState == 2) { time1 = 0.01; pauseState = 0; }
