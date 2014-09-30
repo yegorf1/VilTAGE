@@ -33,6 +33,9 @@ class CharNode {
     }
     String bc = (backgroundColor==null)?"":"background-color: ${backgroundColor};";
     String fc = (color==null)?"":"color: ${color};";
+    String char = this.char;
+    if(char == " ") char = "&nbsp;";
+    
     return '<span ${_sbClasses.toString()} style="$fc $bc ${_sbStyles}">$char</span>';
   }
 }

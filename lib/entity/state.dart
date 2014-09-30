@@ -14,7 +14,7 @@ class State {
   CharNode createCharNode(int x, int y, String text) {
     CharNode cn;
     String charText = text;
-    if(text.length > 1 || text == " ") charText = "&nbsp;";
+    if(text.length > 1) charText = " ";
     cn = new CharNode(x, y, charText);
     charNodes.add(cn);
     return cn;
@@ -23,12 +23,9 @@ class State {
   List<CharNode> createCharNodeLine(int x, int y, bool horizontal, String text) {
     List<CharNode> charNodes = new List<CharNode>();
     for(int i = 0; i < text.length; i++) {
-      String charText = text[i];
-      if(text[i] == " ") charText = "&nbsp;";
-      
       CharNode cn;
-      if(horizontal) cn = new CharNode(x + i, y, charText);
-      else cn = new CharNode(x, y + i, charText);
+      if(horizontal) cn = new CharNode(x + i, y, text[i]);
+      else cn = new CharNode(x, y + i, text[i]);
       charNodes.add(cn);
       this.charNodes.add(cn);
     }
@@ -40,10 +37,7 @@ class State {
     for(int i = 0; i < text.length; i++) {
       charNodes.add(new List<CharNode>());
       for(int j = 0; j < text[i].length; j++) {
-        String charText = text[i][j];
-        if(text[i][j] == " ") charText = "&nbsp;";
-        
-        CharNode cn = new CharNode(x + j, y + i, charText);
+        CharNode cn = new CharNode(x + j, y + i, text[i][j]);
         charNodes[i].add(cn);
         this.charNodes.add(cn);
       }
