@@ -19,4 +19,6 @@ class Entity {
   
   update(double delta) { }
   remove() { VilTAGE.entities[layer].remove(this); }
+  
+  static clear() { for(int i = 0; i < VilTAGE.entities.length; i++) VilTAGE.entities[i] = new List<Entity>(); }
 }
