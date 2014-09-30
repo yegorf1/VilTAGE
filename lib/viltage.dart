@@ -43,7 +43,6 @@ class VilTAGE {
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
 
-    Entity.clear();
     Utility.charArray = new List<List<String>>(height);
     Utility.charArray2 = new List<List<String>>(height);
     for(int i = 0; i < height; i++) {
@@ -51,6 +50,7 @@ class VilTAGE {
       Utility.charArray2[i] = new List<String>(width);
     }
     
+    Entity.clear();
     Utility.render();
    
     Input.init();
