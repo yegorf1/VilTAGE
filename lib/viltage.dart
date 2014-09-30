@@ -67,10 +67,10 @@ class VilTAGE {
 
   static num delta = 0;
   static num time1 = 0;
-  static num pauseState = 1;
+  static num pauseState = 0;
   static loop(num newDelta) {
-    if(pauseState != 0) {
-      if(pauseState == 2) { time1 = 0.01; pauseState = 1;}
+    if(pauseState != 1) {
+      if(pauseState == 2) { time1 = 0.01; pauseState = 0; }
       else time1 += (newDelta-delta)/1000;
       
       while(time1 >= 1/updatePS) {
@@ -92,6 +92,6 @@ class VilTAGE {
     window.animationFrame.then(loop);
   }
   
-  static blured(Event e) { pauseState = 0; }
-  static focused(Event e) { pauseState = 2; }
+  static blured(Event e) { pauseState = 1; }
+  static focused(Event e) { pauseState = 2;  }
 }
