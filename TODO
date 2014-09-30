@@ -5,3 +5,4 @@ sound
 keyPressed
 collision
 replace pauseStage with time = 0;
+change space when rendering, not when creating
