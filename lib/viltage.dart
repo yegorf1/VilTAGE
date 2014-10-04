@@ -3,6 +3,7 @@ library viltage;
 import 'dart:html';
 import 'dart:collection';
 import 'etc/utility.dart';
+import 'dart:async';
 
 part 'entity/state.dart';
 part 'entity/char_node.dart';
@@ -23,6 +24,8 @@ class VilTAGE {
   static NodeValidatorBuilder nvb;
   static Stage _stage;
   static bool running = false;
+  static StreamController updateController;
+  static Stream onUpdate;
   
   static start(VilTAGEConfig vc) {
     if(running) return;
@@ -58,6 +61,9 @@ class VilTAGE {
    
     Input.init();
     
+    updateController = new StreamController();
+    onUpdate = updateController.stream;
+    
     loop(1);
   }
   
@@ -80,6 +86,7 @@ class VilTAGE {
       else time1 += (newDelta-delta)/1000;
       
       while(time1 >= 1/updatePS) {
+        updateController.add(delta);
         Utility.update(time1);
         if(_stage != null) _stage.update(time1);
         
