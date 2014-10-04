@@ -86,7 +86,7 @@ class VilTAGE {
       else time1 += (newDelta-delta)/1000;
       
       while(time1 >= 1/updatePS) {
-        updateController.add(delta);
+        updateController.add(time1);
         Utility.update(time1);
         if(_stage != null) _stage.update(time1);
         
