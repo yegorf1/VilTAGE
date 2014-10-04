@@ -22,8 +22,11 @@ class VilTAGE {
   static ParagraphElement pe;
   static NodeValidatorBuilder nvb;
   static Stage _stage;
+  static bool running = false;
   
   static start(VilTAGEConfig vc) {
+    if(running) return;
+    
     window.onBlur.listen(blured);
     window.onFocus.listen(focused);
     window.onLoad.listen(focused);
@@ -56,6 +59,10 @@ class VilTAGE {
     Input.init();
     
     loop(1);
+  }
+  
+  static end() {
+    Entity.clear();
   }
   
   static setStage(Stage s) {
