@@ -22,7 +22,7 @@ To demonstrate how simple it is to create a new VilTAGE game (read more on wiki)
 2. add those two lines to your `main()` function:
 ```
 VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#game_paragraph"));
-VilTAGE.start(vtc);
+VilTAGE mygame = new VilTAGE(vtc);
 ```
 This will create just a blank 'canvas', but it's a foundation for a new game.
 
