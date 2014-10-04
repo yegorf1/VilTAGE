@@ -5,3 +5,4 @@ sound
 keyPressed
 collision
 start when new object created
+load from text file
