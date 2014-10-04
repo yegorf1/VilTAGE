@@ -27,7 +27,7 @@ class VilTAGE {
   StreamController updateController;
   Stream onUpdate;
   
-  start(VilTAGEConfig vc) {
+  VilTAGE(VilTAGEConfig vc) {
     if(running) return;
     
     window.onBlur.listen(blured);
