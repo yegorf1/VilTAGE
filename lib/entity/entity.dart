@@ -8,25 +8,19 @@ class Entity {
   
   List<State> states = new List<State>();
   
-  Entity(this.x, this.y, this.layer) {
-    VilTAGE.entities[layer].add(this);
+  Entity(this.x, this.y, this.layer, VilTAGE viltage) {
+    viltage.entities[layer].add(this);
     states.add(new State());
   }
   
-  render() {
-    states[activeState].render(x, y);
+  render(List<List<String>> charArray) {
+    states[activeState].render(x, y, charArray);
   }
   
   update(double delta) { }
-  remove() { VilTAGE.entities[layer].remove(this); }
+  remove(List<List<Entity>> entities) { entities[layer].remove(this); }
   
-  static clear() {
-    for(int i = 0; i < VilTAGE.entities.length; i++) VilTAGE.entities[i] = new List<Entity>();
-    Entity e = new Entity(0, 0, 0);
-    for(int i = 0; i < Utility.charArray.length; i++) {
-      for(int j = 0; j < Utility.charArray[i].length; j++) {
-        e.states[0].createCharNode(j, i, VilTAGE.backgroundChar);
-      }
-    }  
+  static clear(List<List<Entity>> entities) {
+    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
   }
 }

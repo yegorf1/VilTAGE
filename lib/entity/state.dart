@@ -3,11 +3,11 @@ part of viltage;
 class State {
   List<CharNode> charNodes = new List<CharNode>();
   
-  render(int x, int y) {
+  render(int x, int y, List<List<String>> charArray) {
     for(int i = 0; i < charNodes.length; i++) {
-      if(y+charNodes[i].y < VilTAGE.height && y+charNodes[i].y >= 0 &&
-         x+charNodes[i].x < VilTAGE.width  && x+charNodes[i].x >= 0)
-      Utility.charArray[y+charNodes[i].y][x+charNodes[i].x] = charNodes[i].getHTML(); 
+      if(y+charNodes[i].y < charArray.length && y+charNodes[i].y >= 0 &&
+         x+charNodes[i].x < charArray[0].length  && x+charNodes[i].x >= 0)
+      charArray[y+charNodes[i].y][x+charNodes[i].x] = charNodes[i].getHTML(); 
     }
   }
   

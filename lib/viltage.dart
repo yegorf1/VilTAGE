@@ -13,21 +13,21 @@ part 'stage.dart';
 part 'viltage_config.dart';
 
 class VilTAGE {
-  static List<List<Entity>> entities = new List<List<Entity>>(20);
-  static num width, height, updatePS;
-  static String backgroundColor;
-  static String backgroundChar;
-  static int fontSize;
-  static double lineHeight;
+  List<List<Entity>> entities = new List<List<Entity>>(20);
+  num width, height, updatePS;
+  String backgroundColor;
+  String backgroundChar;
+  int fontSize;
+  double lineHeight;
   
-  static ParagraphElement pe;
-  static NodeValidatorBuilder nvb;
-  static Stage _stage;
-  static bool running = false;
-  static StreamController updateController;
-  static Stream onUpdate;
+  ParagraphElement pe;
+  NodeValidatorBuilder nvb;
+  Stage _stage;
+  bool running = false;
+  StreamController updateController;
+  Stream onUpdate;
   
-  static start(VilTAGEConfig vc) {
+  start(VilTAGEConfig vc) {
     if(running) return;
     
     window.onBlur.listen(blured);
@@ -49,15 +49,15 @@ class VilTAGE {
     nvb = new NodeValidatorBuilder.common()
       ..allowElement('span', attributes: ['style']);
 
-    Utility.charArray = new List<List<String>>(height);
-    Utility.charArray2 = new List<List<String>>(height);
+    charArray = new List<List<String>>(height);
+    charArray2 = new List<List<String>>(height);
     for(int i = 0; i < height; i++) {
-      Utility.charArray[i] = new List<String>(width);
-      Utility.charArray2[i] = new List<String>(width);
+      charArray[i] = new List<String>(width);
+      charArray2[i] = new List<String>(width);
     }
     
-    Entity.clear();
-    Utility.render();
+    Entity.clear(entities);
+    Utility.render(entities, charArray);
    
     Input.init();
     
@@ -67,35 +67,36 @@ class VilTAGE {
     loop(1);
   }
   
-  static end() {
-    Entity.clear();
+  end() {
+    Entity.clear(entities);
   }
   
-  static setStage(Stage s) {
-    Entity.clear();
+  setStage(Stage s) {
+    Entity.clear(entities);
     _stage = s;
     _stage.init();
   }
 
-  static num delta = 0;
-  static num time1 = 0;
-  static num pauseState = 1;
-  static loop(num newDelta) {
+  List<List<String>> charArray, charArray2;
+  num delta = 0;
+  num time1 = 0;
+  num pauseState = 1;
+  loop(num newDelta) {
     if(pauseState != 1) {
       if(pauseState == 2) { time1 = 0.01; pauseState = 0; }
       else time1 += (newDelta-delta)/1000;
       
       while(time1 >= 1/updatePS) {
         updateController.add(time1);
-        Utility.update(time1);
+        Utility.update(entities, time1);
         if(_stage != null) _stage.update(time1);
         
-        Utility.render();
+        Utility.render(entities, charArray);
         if(_stage != null) _stage.render();
-        if(!Utility.identical()) {
-          Utility.draw();
+        if(!Utility.identical(charArray, charArray2)) {
+          Utility.draw(pe, charArray, nvb);
           pe.attributes["style"] = "font-family:courier; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
-          Utility.merge();
+          Utility.merge(charArray, charArray2);
         }
         time1 -= 1/updatePS;
       }
@@ -105,6 +106,6 @@ class VilTAGE {
     window.animationFrame.then(loop);
   }
   
-  static blured(Event e) { pauseState = 1; }
-  static focused(Event e) { pauseState = 2;  }
+  blured(Event e) { pauseState = 1; }
+  focused(Event e) { pauseState = 2;  }
 }
