@@ -18,7 +18,7 @@ class Entity {
   }
   
   update(double delta) { }
-  remove(List<List<Entity>> entities) { entities[layer].remove(this); }
+  remove(VilTAGE viltage) { viltage.entities[layer].remove(this); }
   
   static clear(List<List<Entity>> entities) {
     for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
