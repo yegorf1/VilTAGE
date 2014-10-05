@@ -24,6 +24,8 @@ class GameJolt {
     var sign = CryptoUtils.bytesToHex((new MD5()..add((url+key).codeUnits)).close());
     var request = HttpRequest.getString(url+"&signature="+sign).then(onDataLoaded);
     HttpRequest hr = new HttpRequest();
+    
+    if(printResponse) print(url+"&signature="+sign);
   }
   
   static bool printResponse = false;
