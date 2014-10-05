@@ -14,9 +14,9 @@ class GameJolt {
   static _addHighscore(String key, String game_id, String score, String scoreSort, {String userName, String userToken, String guestName}) {
     String prefix;
     
-    if(userName != null) {
+    if(guestName != null) {
       prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id=$game_id&guest=$guestName";
-    } else if(guestName != null){
+    } else if(userName != null){
       prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id=$game_id&username=$userName&user_token=$userToken";
     } else return;
     
