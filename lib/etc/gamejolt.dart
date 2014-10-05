@@ -15,9 +15,9 @@ class GameJolt {
     String prefix;
     
     if(userName != null) {
-      prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id$game_id&guest=$guestName";
+      prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id=$game_id&guest=$guestName";
     } else if(guestName != null){
-      prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id$game_id&username=$userName&user_token=$userToken";
+      prefix = "http://gamejolt.com/api/game/v1/scores/add/?game_id=$game_id&username=$userName&user_token=$userToken";
     } else return;
     
     String url = "$prefix&score=$score&sort=$scoreSort&format=keypair";
