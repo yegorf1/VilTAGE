@@ -13,7 +13,8 @@ class Utility {
     StringBuffer sb = new StringBuffer();
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
-        if(charArray[i][j] == null) sb.write(".");
+        if(charArray[i][j] == null) sb.write("&nbsp;");
+        else if(charArray[i][j] == "") sb.write("&nbsp;");
         else if(charArray[i][j] == " ") sb.write("&nbsp;");
         else sb.write(charArray[i][j]);
       }
