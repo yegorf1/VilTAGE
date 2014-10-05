@@ -2,9 +2,11 @@ library viltage;
 
 import 'dart:html';
 import 'dart:collection';
-import 'etc/utility.dart';
 import 'dart:async';
+import 'package:crypto/crypto.dart';
 
+part 'etc/gamejolt.dart';
+part 'etc/utility.dart';
 part 'entity/state.dart';
 part 'entity/char_node.dart';
 part 'entity/entity.dart';

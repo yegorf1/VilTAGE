@@ -1,7 +1,4 @@
-library viltage_etc;
-
-import '../viltage.dart';
-import 'dart:html';
+part of viltage;
 
 class Utility {
   static render(List<List<Entity>> entities, List<List<String>> charArray) {

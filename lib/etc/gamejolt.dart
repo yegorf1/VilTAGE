@@ -1,4 +1,4 @@
-part of viltage_etc;
+part of viltage;
 
 class GameJolt {
   static String base = "http://gamejolt.com/api/game/v1/scores/add/?";
