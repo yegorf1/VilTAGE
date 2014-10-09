@@ -56,7 +56,7 @@ class VilTAGE {
       charArray2[i] = new List<String>(width);
     }
     
-    Entity.clear(entities);
+    Entity.clear(this);
     Utility.render(entities, charArray);
    
     Input.init();
@@ -68,11 +68,11 @@ class VilTAGE {
   }
   
   end() {
-    Entity.clear(entities);
+    Entity.clear(this);
   }
   
   setStage(Stage s) {
-    Entity.clear(entities);
+    Entity.clear(this);
     _stage = s;
     _stage.init();
   }
