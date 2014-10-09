@@ -20,7 +20,9 @@ class Entity {
   update(double delta) { }
   remove(VilTAGE viltage) { viltage.entities[layer].remove(this); }
   
-  static clear(List<List<Entity>> entities) {
-    for(int i = 0; i < entities.length; i++) entities[i] = new List<Entity>();
+  static clear(VilTAGE viltage) {
+    for(int i = 0; i < viltage.entities.length; i++) viltage.entities[i] = new List<Entity>();
+    Entity e = new Entity(0, 0, 0, viltage);
+    for(int i = 0; i < viltage.width; i++) for(int j = 0; j < viltage.height; j++) e.states[0].createCharNode(i, j, viltage.backgroundChar);
   }
 }
