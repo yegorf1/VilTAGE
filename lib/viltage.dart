@@ -95,7 +95,7 @@ class VilTAGE {
         if(_stage != null) _stage.render();
         if(!Utility.identical(charArray, charArray2)) {
           Utility.draw(pe, charArray, nvb);
-          pe.attributes["style"] = "font-family:monospace; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
+          pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
           Utility.merge(charArray, charArray2);
         }
         time1 -= 1/updatePS;
