@@ -9,3 +9,4 @@ add wiki page for multiple games running
 async thread
 file I/O
 move other files into src/ folder
+add gamejolt load method
