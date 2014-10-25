@@ -93,7 +93,7 @@ class VilTAGE {
 //      if(!Utility.identical(charArray, charArray2)) {
         Utility.draw(pe, charArray);
         pe.attributes = attributes;
-        pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em";
+        pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em; white-space:pre";
 //      Utility.merge(charArray, charArray2);
 //      }
         time1 -= 1/updatePS;

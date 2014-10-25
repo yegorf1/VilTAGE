@@ -21,8 +21,11 @@ class CharNode {
     if(color != null) se.style.color = color;
     
     se.text = this.char;
-    if(this.char == " " || this.char == "" || this.char.length > 1) se.text = "&nbsp;";
     
+    if(this.char == "" || this.char.length > 1) {
+      se.text = " ";
+    }
+      
     return se;
   }
 }
