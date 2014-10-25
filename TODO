@@ -9,3 +9,4 @@ add wiki page for multiple games running
 async thread
 file I/O
 add gamejolt load method
+add List<String> styles to paragraph and CharNode
