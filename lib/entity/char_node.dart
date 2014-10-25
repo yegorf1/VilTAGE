@@ -6,36 +6,23 @@ class CharNode {
   String color;
   String backgroundColor;
   List<String> classes = new List<String>();
-  Map<String, String> styles = new Map<String, String>();
-  
-  StringBuffer _sbClasses, _sbStyles;
-  
+  Map<String, String> attributes = new Map<String, String>();
+  SpanElement se = new SpanElement();
+    
   CharNode(this.x, this.y, this.char) { 
     classes.add("char_node");
-    _sbClasses = new StringBuffer();
-    _sbStyles = new StringBuffer();
   }
   
-  String getHTML() {
-    if(classes.length > 0) {
-      _sbClasses = new StringBuffer();
-      _sbClasses.write('class="');
-      for(int i = 0; i < classes.length; i++) {
-        _sbClasses.write(' ${classes[i]}');
-      }
-      _sbClasses.write('"');
-    }
-    if(styles.length > 0) {
-      _sbStyles = new StringBuffer();
-      styles.forEach((k, v) {
-        _sbStyles.write("$k: $v;");
-      });
-    }
-    String bc = (backgroundColor==null)?"":"background-color: ${backgroundColor};";
-    String fc = (color==null)?"":"color: ${color};";
-    String char = this.char;
-    if(char == " ") char = "&nbsp;";
+  SpanElement getSpanElement() {
+    se.attributes = attributes;
+    se.classes = classes;
     
-    return '<span ${_sbClasses.toString()} style="$fc $bc ${_sbStyles}">$char</span>';
+    if(backgroundColor != null) se.style.backgroundColor = backgroundColor;
+    if(color != null) se.style.color = color;
+    
+    se.text = this.char;
+    if(this.char == " " || this.char == "" || this.char.length > 1) se.text = "&nbsp;";
+    
+    return se;
   }
 }

@@ -1,7 +1,7 @@
 part of viltage;
 
 class Utility {
-  static render(List<List<Entity>> entities, List<List<String>> charArray) {
+  static render(List<List<Entity>> entities, List<List<SpanElement>> charArray) {
     for(int i = 0; i < entities.length; i++) {
       for(int j = 0; j < entities[i].length; j++) {
         entities[i][j].render(charArray);
@@ -9,18 +9,25 @@ class Utility {
     }
  }
   
-  static draw(ParagraphElement pe, List<List<String>> charArray, NodeValidatorBuilder nvb) {
-    StringBuffer sb = new StringBuffer();
+  static draw(ParagraphElement pe, List<List<SpanElement>> charArray) {
+    pe.children.clear();
+    List<SpanElement> spanElements = new List<SpanElement>();
+//    StringBuffer sb = new StringBuffer();
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
-        if(charArray[i][j] == null) sb.write("&nbsp;");
+        spanElements.add(charArray[i][j]);
+/*        if(charArray[i][j] == null) sb.write("&nbsp;");
         else if(charArray[i][j] == "") sb.write("&nbsp;");
         else if(charArray[i][j] == " ") sb.write("&nbsp;");
-        else sb.write(charArray[i][j]);
+        else sb.write(charArray[i][j]); */
       }
-      sb.write("<br />");
+      SpanElement endLineElement = new SpanElement();
+      endLineElement.setInnerHtml("</br>");
+      spanElements.add(endLineElement);
+//      sb.write("<br />");
     }
-    pe.setInnerHtml(sb.toString(), validator:nvb);
+    for(int i = 0; i < spanElements.length; i++) pe.children.add(spanElements[i]);
+//    pe.setInnerHtml(sb.toString(), validator:nvb);
   }
   
   static update(List<List<Entity>> entities, double delta) {
