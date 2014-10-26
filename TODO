@@ -8,6 +8,6 @@ load from text file
 add wiki page for multiple games running
 async thread
 file I/O
-add gamejolt load method
 add List<String> styles to paragraph and CharNode
 viltage.backgruondChar should do something
+add support for GameJolt trophies
