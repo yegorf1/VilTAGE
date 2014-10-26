@@ -41,8 +41,6 @@ class VilTAGE {
     updatePS = vc.updatePS;
     backgroundColor = vc.backgroundColor;
     pe = vc.pe;
-    if(vc.backgroundChar == " ") backgroundChar = "&nbsp;";
-    else backgroundChar = vc.backgroundChar;
     fontSize = vc.fontSize;
     lineHeight = vc.lineHeight;
 
