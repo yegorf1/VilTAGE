@@ -10,3 +10,4 @@ async thread
 file I/O
 add gamejolt load method
 add List<String> styles to paragraph and CharNode
+viltage.backgruondChar should do something
