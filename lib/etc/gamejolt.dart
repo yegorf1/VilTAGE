@@ -2,7 +2,18 @@ part of viltage;
 
 class GameJolt {
   static String base = "http://gamejolt.com/api/game/v1/scores/add/?";
-
+  static String loadedUser = null, loadedToken = null;
+  
+  static loadData() {
+    String prevLoc = window.location.href;
+    var uri = Uri.parse(prevLoc);
+    uri.queryParameters.forEach((k, v) {
+      if (k.endsWith("n")) loadedToken = v;
+      if (k.endsWith("e")) loadedUser = v;
+    });
+    if(loadedUser == null || loadedUser.length < 3) loadedUser = loadedToken = null;
+  }
+  
   static addHighscoreGuest(String key, String game_id, String score, String scoreSort, String guestName) {
     _addHighscore(key, game_id, score, scoreSort, guestName:guestName);
   }
