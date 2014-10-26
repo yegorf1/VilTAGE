@@ -104,6 +104,6 @@ class VilTAGE {
     window.animationFrame.then(loop);
   }
   
-  blured(Event e) { pauseState = 1; }
+  blured(Event e) { pauseState = 1; delta = 0; }
   focused(Event e) { pauseState = 2;  }
 }
