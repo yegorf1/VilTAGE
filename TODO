@@ -5,10 +5,10 @@ sound
 keyPressed
 collision
 load from text file
-add wiki page for multiple games running
-async thread
 file I/O
-add List<String> styles to paragraph and CharNode
-viltage.backgruondChar should do something
 add support for GameJolt trophies
+viltage.backgroundChar should do something
+add wiki page for multiple games running
+add wiki page for new VilTAGE (canvas)
 use canvas instead of paragraph?
+node's background color
