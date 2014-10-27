@@ -21,7 +21,6 @@ class VilTAGE {
   String backgroundChar;
   Map<String, String> attributes = new Map<String, String>();
   int fontSize;
-  double lineHeight;
   int offX = 4;
   int offY = 3;
   
@@ -48,7 +47,8 @@ class VilTAGE {
     backgroundChar = vc.backgroundChar;
     
     fontSize = vc.fontSize;
-    lineHeight = vc.lineHeight;
+    
+    ce.context2D.font="10px Monospace";
 
     charArray = new List<List<CharNode>>(height);
     charArray2 = new List<List<CharNode>>(height);
