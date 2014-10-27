@@ -12,5 +12,8 @@ class VilTAGEConfig {
   String backgroundChar = ".";
   CanvasElement ce;
   
-  VilTAGEConfig(this.ce) { }
+  VilTAGEConfig(this.ce) { 
+    offX = fontSize~/3;
+    offY = fontSize~/4;
+  }
 }
