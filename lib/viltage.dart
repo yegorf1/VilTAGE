@@ -21,8 +21,7 @@ class VilTAGE {
   String backgroundChar;
   Map<String, String> attributes = new Map<String, String>();
   int fontSize;
-  int offX = 4;
-  int offY = 3;
+  int offX, offY;
   
   CanvasElement ce;
   Stage _stage;
@@ -47,8 +46,8 @@ class VilTAGE {
     backgroundChar = vc.backgroundChar;
     
     fontSize = vc.fontSize;
-    
-    ce.context2D.font="10px Monospace";
+    offX = vc.offX;
+    offY = vc.offY;
 
     charArray = new List<List<CharNode>>(height);
     charArray2 = new List<List<CharNode>>(height);
@@ -92,6 +91,7 @@ class VilTAGE {
       else time1 += (newDelta-delta)/1000;
       
       while(time1 >= 1/updatePS) {
+        ce.context2D.font="${fontSize}px Monospace";
         updateController.add(time1);
         Utility.update(entities, time1);
         if(_stage != null) _stage.update(time1);
