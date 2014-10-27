@@ -27,7 +27,9 @@ class VilTAGE {
   Stage _stage;
   bool running = false;
   StreamController updateController;
+  StreamController focusedController;
   Stream onUpdate;
+  Stream onFocused;
   
   VilTAGE(VilTAGEConfig vc) {
     if(running) return;
@@ -58,6 +60,8 @@ class VilTAGE {
    
     Input.init();
     
+    focusedController = new StreamController();
+    onFocused = focusedController.stream;
     updateController = new StreamController();
     onUpdate = updateController.stream;
     
@@ -90,12 +94,12 @@ class VilTAGE {
         
         Utility.render(entities, charArray);
         if(_stage != null) _stage.render();
-//      if(!Utility.identical(charArray, charArray2)) {
-        Utility.draw(pe, charArray);
-        pe.attributes = attributes;
-        pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em; white-space:pre";
-//      Utility.merge(charArray, charArray2);
-//      }
+          if(!Utility.identical(charArray, charArray2)) {
+          Utility.draw(pe, charArray);
+          pe.attributes = attributes;
+          pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em; white-space:pre";
+          Utility.merge(charArray, charArray2);
+          }
         time1 -= 1/updatePS;
       }
       
@@ -104,6 +108,6 @@ class VilTAGE {
     window.animationFrame.then(loop);
   }
   
-  blured(Event e) { pauseState = 1; delta = 0; }
-  focused(Event e) { pauseState = 2;  }
+  blured(Event e) { pauseState = 1; }
+  focused(Event e) { pauseState = 2; focusedController.add(0); }
 }
