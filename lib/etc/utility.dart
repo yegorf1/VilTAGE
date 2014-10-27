@@ -1,7 +1,7 @@
 part of viltage;
 
 class Utility {
-  static render(List<List<Entity>> entities, List<List<SpanElement>> charArray) {
+  static render(List<List<Entity>> entities, List<List<CharNode>> charArray) {
     for(int i = 0; i < entities.length; i++) {
       for(int j = 0; j < entities[i].length; j++) {
         entities[i][j].render(charArray);
@@ -9,19 +9,11 @@ class Utility {
     }
  }
   
-  static draw(ParagraphElement pe, List<List<SpanElement>> charArray) {
-    List<SpanElement> se = new List<SpanElement>();
+  static draw(CanvasRenderingContext2D ctx, int offX, int offY, List<List<CharNode>> charArray) {
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
-        se.add(charArray[i][j]);
+        ctx.fillText(charArray[i][j].char, i*offY, j*offX);
       }
-      SpanElement endLineElement = new SpanElement();
-      endLineElement.setInnerHtml("</br>");
-      se.add(endLineElement);
-    }
-    for(int i = 0; i < se.length; i++) {
-      if(pe.children.length == i) pe.children.add(se[i]);
-      else pe.children[i] = se[i];
     }
   }
   

@@ -13,7 +13,7 @@ class Entity {
     states.add(new State());
   }
   
-  render(List<List<SpanElement>> charArray) {
+  render(List<List<CharNode>> charArray) {
     states[activeState].render(x, y, charArray);
   }
   

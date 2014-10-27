@@ -8,7 +8,7 @@ class VilTAGEConfig {
   double lineHeight = 1.0;
   String backgroundColor = "#FFFFFF";
   String backgroundChar = ".";
-  ParagraphElement pe;
+  CanvasElement ce;
   
-  VilTAGEConfig(this.pe) { }
+  VilTAGEConfig(this.ce) { }
 }
