@@ -42,8 +42,8 @@ class VilTAGE {
     height= vc.height;
     updatePS = vc.updatePS;
     backgroundColor = vc.backgroundColor;
-    ce = vc.ce;
     backgroundChar = vc.backgroundChar;
+    ce = vc.ce;
     
     fontSize = vc.fontSize;
     offX = vc.offX;
@@ -92,6 +92,9 @@ class VilTAGE {
       
       while(time1 >= 1/updatePS) {
         ce.context2D.clearRect(0, 0, ce.width, ce.height);
+        ce.context2D.fillStyle = backgroundColor;
+        ce.context2D.fillRect(0, 0, ce.width, ce.height);
+        
         ce.context2D.font="${fontSize}px Monospace";
         updateController.add(time1);
         Utility.update(entities, time1);

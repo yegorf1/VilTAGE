@@ -13,7 +13,6 @@ class VilTAGEConfig {
   CanvasElement ce;
   
   VilTAGEConfig(this.ce) { 
-    offX = fontSize~/3;
-    offY = fontSize~/4;
+    offX = offY = fontSize;
   }
 }

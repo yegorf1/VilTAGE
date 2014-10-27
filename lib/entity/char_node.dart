@@ -3,7 +3,7 @@ part of viltage;
 class CharNode {
   int x, y;
   String char = "x";
-  String color;
+  String color = "#000000";
   String backgroundColor;
   List<String> classes = new List<String>();
   Map<String, String> attributes = new Map<String, String>();
