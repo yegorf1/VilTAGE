@@ -50,9 +50,14 @@ class VilTAGE {
 
     charArray = new List<List<SpanElement>>(height);
     charArray2 = new List<List<SpanElement>>(height);
+    pe.children.clear();
+    
     for(int i = 0; i < height; i++) {
       charArray[i] = new List<SpanElement>(width);
       charArray2[i] = new List<SpanElement>(width);
+      for(int j = 0; j < width+1; j++) {
+        pe.children.add(new SpanElement());
+      }
     }
     
     Entity.clear(this);
@@ -94,12 +99,12 @@ class VilTAGE {
         
         Utility.render(entities, charArray);
         if(_stage != null) _stage.render();
-          if(!Utility.identical(charArray, charArray2)) {
+//        if(!Utility.identical(charArray, charArray2)) {
           Utility.draw(pe, charArray);
           pe.attributes = attributes;
           pe.attributes["style"] = "font-family: Courier New; background-color:${backgroundColor}; text-align:center; color:#666666; font-size:${fontSize}pt; line-height:${lineHeight}em; white-space:pre";
           Utility.merge(charArray, charArray2);
-          }
+//        }
         time1 -= 1/updatePS;
       }
       

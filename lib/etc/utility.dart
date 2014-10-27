@@ -10,17 +10,19 @@ class Utility {
  }
   
   static draw(ParagraphElement pe, List<List<SpanElement>> charArray) {
-    pe.children.clear();
-    List<SpanElement> spanElements = new List<SpanElement>();
+    List<SpanElement> se = new List<SpanElement>();
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
-        spanElements.add(charArray[i][j]);
+        se.add(charArray[i][j]);
       }
       SpanElement endLineElement = new SpanElement();
       endLineElement.setInnerHtml("</br>");
-      spanElements.add(endLineElement);
+      se.add(endLineElement);
     }
-    for(int i = 0; i < spanElements.length; i++) pe.children.add(spanElements[i]);
+    for(int i = 0; i < se.length; i++) {
+      if(pe.children.length == i) pe.children.add(se[i]);
+      else pe.children[i] = se[i];
+    }
   }
   
   static update(List<List<Entity>> entities, double delta) {
