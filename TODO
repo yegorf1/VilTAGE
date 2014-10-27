@@ -11,3 +11,4 @@ file I/O
 add List<String> styles to paragraph and CharNode
 viltage.backgruondChar should do something
 add support for GameJolt trophies
+use canvas instead of paragraph?
