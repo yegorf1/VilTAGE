@@ -25,14 +25,13 @@ class VilTAGE {
   
   CanvasElement ce;
   Stage _stage;
-  bool running = false;
   StreamController updateController;
   StreamController focusedController;
   Stream onUpdate;
   Stream onFocused;
   
   VilTAGE(VilTAGEConfig vc) {
-    if(running) return;
+    vc.calculate();    
     
     window.onBlur.listen(blured);
     window.onFocus.listen(focused);
