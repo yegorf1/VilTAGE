@@ -7,7 +7,6 @@ collision
 load from text file
 file I/O
 add support for GameJolt trophies
-viltage.backgroundChar should do something
 add wiki page for multiple games running
 add wiki page for new VilTAGE (canvas)
 use canvas instead of paragraph?
