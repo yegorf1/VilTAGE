@@ -12,3 +12,4 @@ add wiki page for multiple games running
 add wiki page for new VilTAGE (canvas)
 use canvas instead of paragraph?
 node's background color
+font size recalculation (+offX, offY)
