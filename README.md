@@ -27,7 +27,7 @@ VilTAGE mygame = new VilTAGE(vtc);
 ```
 This will take a canvas element and create a blank grid of dots, which becomes a foundation for a new game.
 
-![](http://s24.postimg.org/tu31g8g35/git_Screen.png)
+![](http://s3.postimg.org/l9z9k3d37/Untitled_1.png)
 
 ### Contact
 
@@ -35,7 +35,7 @@ You can contact me on Twitter [@ViliX64](https://twitter.com/ViliX64) where I'll
 
 ### Contributing & Source
 
-The author of VilTAGE is Vilém Zouhar (ViliX64). I'm constantly improving the code base. Reporting any issues/suggesting new things is the best way how to improve VilTAGE. You can also change the code itself and commit changes!
+The author of VilTAGE is Vilém Zouhar (@ViliX64) (@rustilnee contributed to!). I'm constantly improving the code base. Reporting any issues/suggesting new things is the best way how to improve VilTAGE. You can also change the code itself and commit changes!
 
 ### License
 
