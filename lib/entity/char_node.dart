@@ -4,7 +4,7 @@ class CharNode {
   int x, y;
   String char = "x";
   String color = "#000000";
-  String backgroundColor;
+  String backgroundColor = "#FFFFFF";
   List<String> classes = new List<String>();
   Map<String, String> attributes = new Map<String, String>();
   SpanElement se = new SpanElement();
