@@ -101,10 +101,9 @@ class VilTAGE {
         
         Utility.render(entities, charArray);
         if(_stage != null) _stage.render();
-//        if(!Utility.identical(charArray, charArray2)) {
-            Utility.draw(ce.context2D, offX, offY, charArray);
-//          Utility.merge(charArray, charArray2);
-//        }
+        ce.context2D.fillStyle = backgroundColor;    
+        ce.context2D.fillRect(0, 0, ce.width, ce.height);
+        Utility.draw(ce.context2D, offX, offY, charArray);
         time1 -= 1/updatePS;
       }
       

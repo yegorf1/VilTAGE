@@ -32,21 +32,4 @@ class Utility {
       }
     }
   }
-  
-  static bool identical(List<List<SpanElement>> charArray, List<List<SpanElement>> charArray2) {
-    for(int i = 0; i < charArray.length; i++) {
-      for(int j = 0; j < charArray[i].length; j++) {
-        if(charArray[i][j] != charArray2[i][j]) return false;
-      }
-    }
-    return true;
-  }
-  
-  static void merge(List<List<SpanElement>> charArray, List<List<SpanElement>> charArray2) {
-    for(int i = 0; i < charArray.length; i++) {
-      for(int j = 0; j < charArray[i].length; j++) {
-        charArray2[i][j] = charArray[i][j];
-      }
-    }
-  }
 }
