@@ -16,15 +16,16 @@ In the future, VilTAGE should be able to provide an easy way of making Dart ASCI
 
 ### Creating new game
 
-To demonstrate how simple it is to create a new VilTAGE game (read more on wiki), here are two steps you need to make to create new game:
+To demonstrate how simple it is to create a new VilTAGE game (read more on wiki), here are three steps you need to make to create new game:
 
 1. add `dependency viltage: any` to your project's pubspec.yaml
-2. add those two lines to your `main()` function:
+2. add `import 'package:viltage/viltage.dart';` to the top of your main .dart file
+3. add those two lines to your `main()` function:
 ```
-VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#game_paragraph"));
+VilTAGEConfig vtc = new VilTAGEConfig(querySelector("#game_canvas"));
 VilTAGE mygame = new VilTAGE(vtc);
 ```
-This will create just a blank 'canvas', but it's a foundation for a new game.
+This will take a canvas element and create a blank grid of dots, which becomes a foundation for a new game.
 
 ![](http://s24.postimg.org/tu31g8g35/git_Screen.png)
 
