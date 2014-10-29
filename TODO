@@ -1,10 +1,8 @@
 Things that should be included in future:
 
 animation system using States
-sound
 collision
-load from text file
 file I/O
 add support for GameJolt trophies
 font size recalculation (+offX, offY)
-text rotation
+text rotation (maybe not possible)
