@@ -7,3 +7,4 @@ load from text file
 file I/O
 add support for GameJolt trophies
 font size recalculation (+offX, offY)
+text rotation
