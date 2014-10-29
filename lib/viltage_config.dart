@@ -5,7 +5,7 @@ class VilTAGEConfig {
   int height = 20;
   int updatePS = 15;
   int fontSize = 14;
-  int offX, offY;
+  double offX, offY;
   int canvasWidth = 300;
   int canvasHeight = 300;
     
@@ -21,7 +21,7 @@ class VilTAGEConfig {
   calculate() {
     ce.width = canvasWidth;
     ce.height = canvasHeight;
-    if(offX == null) offX = canvasWidth~/width;
-    if(offY == null) offY = canvasHeight~/height;
+    if(offX == null) offX = canvasWidth/width;
+    if(offY == null) offY = canvasHeight/height;
   }
 }

@@ -45,8 +45,8 @@ class VilTAGE {
     ce = vc.ce;
     
     fontSize = vc.fontSize;
-    offX = vc.offX;
-    offY = vc.offY;
+    offX = vc.offX.floor();
+    offY = vc.offY.floor();
 
     charArray = new List<List<CharNode>>(height);
     charArray2 = new List<List<CharNode>>(height);
