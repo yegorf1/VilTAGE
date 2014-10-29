@@ -1,14 +1,9 @@
-Things that should be definietly included:
+Things that should be included in future:
 
 animation system using States
 sound
-keyPressed
 collision
 load from text file
 file I/O
 add support for GameJolt trophies
-add wiki page for multiple games running
-add wiki page for new VilTAGE (canvas)
-use canvas instead of paragraph?
-node's background color
 font size recalculation (+offX, offY)
