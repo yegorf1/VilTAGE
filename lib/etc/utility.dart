@@ -12,6 +12,9 @@ class Utility {
   static draw(CanvasRenderingContext2D ctx, int offX, int offY, List<List<CharNode>> charArray) {
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
+        ctx.fillStyle = charArray[i][j].backgroundColor;
+        ctx.fillRect(j*offX, i*offY, (j+1)*offX, (i+1)*offY);
+        
         ctx.fillStyle = charArray[i][j].color;
         ctx.fillText(charArray[i][j].char, j*offX, (i+1)*offY);
       }
