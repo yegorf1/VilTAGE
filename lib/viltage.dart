@@ -15,6 +15,7 @@ part 'stage.dart';
 part 'viltage_config.dart';
 
 class VilTAGE {
+  bool shouldEnd = false;
   List<List<Entity>> entities = new List<List<Entity>>(20);
   num width, height, updatePS;
   String backgroundColor;
@@ -72,6 +73,7 @@ class VilTAGE {
   
   end() {
     Entity.clear(this);
+    shouldEnd = true;
   }
   
   setStage(Stage s) {
@@ -107,7 +109,7 @@ class VilTAGE {
       
       delta = newDelta;
     }
-    window.animationFrame.then(loop);
+    if(!shouldEnd) window.animationFrame.then(loop);
   }
   
   blured(Event e) { pauseState = 1; }
