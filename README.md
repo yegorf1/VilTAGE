@@ -9,7 +9,9 @@ In the future, VilTAGE should be able to provide an easy way of making Dart ASCI
 
 ### Getting Started
 * [Watch YouTube tutorials on VilTAGE](https://www.youtube.com/playlist?list=PLf5vEuOWKqWisq5UsJYqEWSjQ6RJPxMpq)
+
 or
+
 * [Set up your IDE (Dart Editor, others)](https://github.com/ViliX64/VilTAGE/wiki/Setting-up-IDE)
 * [Create your first project](https://github.com/ViliX64/VilTAGE/wiki/Creating-first-project)
 * [Display some stuff](https://github.com/ViliX64/VilTAGE/wiki/Adding-entities)
