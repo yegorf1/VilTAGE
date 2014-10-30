@@ -1,4 +1,4 @@
-VilTAGE
+﻿VilTAGE
 =======
 
 ![VilTAGE logo](http://s28.postimg.org/lcfi75lf1/Vil_TAGE_logo.png)
@@ -8,7 +8,8 @@ Stands for **ViliX's Text/ASCII Game Engine**. It's more of a framework than a g
 In the future, VilTAGE should be able to provide an easy way of making Dart ASCII based games.
 
 ### Getting Started
-
+* [Watch YouTube tutorials on VilTAGE](https://www.youtube.com/playlist?list=PLf5vEuOWKqWisq5UsJYqEWSjQ6RJPxMpq)
+or
 * [Set up your IDE (Dart Editor, others)](https://github.com/ViliX64/VilTAGE/wiki/Setting-up-IDE)
 * [Create your first project](https://github.com/ViliX64/VilTAGE/wiki/Creating-first-project)
 * [Display some stuff](https://github.com/ViliX64/VilTAGE/wiki/Adding-entities)
