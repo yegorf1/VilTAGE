@@ -21,6 +21,7 @@ class Utility {
     for(int i = 0; i < charArray.length; i++) {
       for(int j = 0; j < charArray[0].length; j++) {
         ctx.fillStyle = charArray[i][j].color;
+        if(charArray[i][j].char.length > 1) charArray[i][j].char = " ";
         ctx.fillText(charArray[i][j].char, j*offX, (i+1)*offY);
       }
     }

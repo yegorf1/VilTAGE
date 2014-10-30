@@ -15,7 +15,6 @@ class State {
   CharNode createCharNode(int x, int y, String text) {
     CharNode cn;
     String charText = text;
-    if(text.length > 1) charText = " ";
     cn = new CharNode(x, y, charText);
     charNodes.add(cn);
     return cn;

@@ -12,20 +12,4 @@ class CharNode {
   CharNode(this.x, this.y, this.char) { 
     classes.add("char_node");
   }
-  
-  SpanElement getSpanElement() {
-    se.attributes = attributes;
-    se.classes = classes;
-    
-    if(backgroundColor != null) se.style.backgroundColor = backgroundColor;
-    if(color != null) se.style.color = color;
-    
-    se.text = this.char;
-    
-    if(this.char == "" || this.char.length > 1) {
-      se.text = " ";
-    }
-      
-    return se;
-  }
 }
