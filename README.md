@@ -38,7 +38,7 @@ You can contact me on Twitter [@ViliX64](https://twitter.com/ViliX64) where I'll
 
 ### Contributing & Source
 
-The author of VilTAGE is Vilém Zouhar (@ViliX64) (@rustilnee contributed to!). I'm constantly improving the code base. Reporting any issues/suggesting new things is the best way how to improve VilTAGE. You can also change the code itself and commit changes!
+The author of VilTAGE is Vilém Zouhar (@ViliX64) (@rustilnee and @yegorf1 contributed to!). I'm constantly improving the code base. Reporting any issues/suggesting new things is the best way how to improve VilTAGE. You can also change the code itself and commit changes!
 
 ### License
 
