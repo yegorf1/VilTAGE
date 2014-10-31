@@ -15,12 +15,11 @@ part 'stage.dart';
 part 'viltage_config.dart';
 
 class VilTAGE {
-  bool shouldEnd = false;
   List<List<Entity>> entities = new List<List<Entity>>(20);
   num width, height, updatePS;
   String backgroundColor;
   String backgroundChar;
-  Map<String, String> attributes = new Map<String, String>();
+  String fontName;
   int fontSize;
   int offX, offY;
   
@@ -46,6 +45,7 @@ class VilTAGE {
     ce = vc.ce;
     
     fontSize = vc.fontSize;
+    fontName = vc.fontName;
     offX = vc.offX.floor();
     offY = vc.offY.floor();
 
@@ -71,11 +71,6 @@ class VilTAGE {
     loop(1);
   }
   
-  end() {
-    Entity.clear(this);
-    shouldEnd = true;
-  }
-  
   setStage(Stage s) {
     Entity.clear(this);
     _stage = s;
@@ -96,7 +91,7 @@ class VilTAGE {
         ce.context2D.fillStyle = backgroundColor;
         ce.context2D.fillRect(0, 0, ce.width, ce.height);
         
-        ce.context2D.font="${fontSize}px Monospace";
+        ce.context2D.font="${fontSize}px ${fontName}";
         updateController.add(time1);
         Utility.update(entities, time1);
         if(_stage != null) _stage.update(time1);
@@ -106,10 +101,9 @@ class VilTAGE {
         Utility.draw(ce.context2D, offX, offY, charArray, this);
         time1 -= 1/updatePS;
       }
-      
       delta = newDelta;
     }
-    if(!shouldEnd) window.animationFrame.then(loop);
+    window.animationFrame.then(loop);
   }
   
   blured(Event e) { pauseState = 1; }
