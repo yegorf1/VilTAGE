@@ -6,3 +6,4 @@ file I/O
 add support for GameJolt trophies
 font size recalculation (+offX, offY)
 text rotation (maybe not possible)
+better drawing method (buffer?)
