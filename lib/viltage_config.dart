@@ -12,6 +12,7 @@ class VilTAGEConfig {
   double lineHeight = 1.0;
   String backgroundColor = "#FFFFFF";
   String backgroundChar = ".";
+  String fontName = "Monospace";
   CanvasElement ce;
   
   VilTAGEConfig(this.ce) { 
