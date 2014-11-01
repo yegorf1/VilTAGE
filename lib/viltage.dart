@@ -15,11 +15,10 @@ part 'screen.dart';
 part 'viltage_config.dart';
 
 class VilTAGE {
-	bool shouldEnd = false;
 	num width, height, updatePS;
 	String backgroundColor;
 	String backgroundChar;
-	Map<String, String> attributes = new Map<String, String>();
+	String fontName;
 	int fontSize;
 	int offX, offY;
 	
@@ -45,6 +44,7 @@ class VilTAGE {
 		ce = vc.ce;
 		
 		fontSize = vc.fontSize;
+		fontName = vc.fontName;
 		offX = vc.offX.floor();
 		offY = vc.offY.floor();
 		
@@ -68,11 +68,6 @@ class VilTAGE {
 		onUpdate = updateController.stream;
 		
 		loop(1);
-	}
-	
-	end() {
-		Entity.clearScreen (_screen);
-		shouldEnd = true;
 	}
 	
 	setScreen(VilTAGEScreen s) {
@@ -105,7 +100,7 @@ class VilTAGE {
 				ce.context2D.fillStyle = backgroundColor;
 				ce.context2D.fillRect(0, 0, ce.width, ce.height);
 				
-				ce.context2D.font="${fontSize}px Monospace";
+				ce.context2D.font="${fontSize}px ${fontName}";
 				updateController.add(time1);
 				
 
@@ -127,9 +122,7 @@ class VilTAGE {
 			delta = newDelta;
 		}
 		
-		if(!shouldEnd) {
-			window.animationFrame.then(loop);
-		}
+		window.animationFrame.then(loop);
 	}
 	
 	blured(Event e) {
